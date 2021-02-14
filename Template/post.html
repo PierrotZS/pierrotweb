@@ -1,0 +1,96 @@
+{% extends 'layout.html'%}
+{% load static %}
+
+{% block content%}
+    <p></p>
+    <div class="container-sm">
+         <div class="row">
+             <div class="col-md-9">
+                 <div class="card">
+                 <div class="card-body">
+                 <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
+                    </ol>
+                    </nav>
+                  <div class="row">
+                    <div class="col-md-3">
+                    <div class="card-body">
+                      <img src="{% if not post.image %}https://i.ibb.co/XS34B5Q/logo-new.png{% else %}/media/{{ post.image }}{% endif %}" style="width: 206px; height: 270px;">
+                    </div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="card-body">
+                        <h3 class="card-title border-bottom pb-2 mb-0"> {{ post.title }} </h3>
+                          <p class="card-text"><small class="text-muted">Last Update : {{ post.pub_date }}</small></p>
+                        <p class="card-text">{{ post.desc }}</p>
+                        <div class="social-overlap process-scetion mt100">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                              <div class="col-md-10">
+                                  <div class="social-bar">
+                                      <div class="social-icons mb-3 iconpad text-center border-top pb-2">
+                                          <a href="" target="_blank" class="slider-nav-item"><i class="fab fa-facebook"></i></a>
+                                          <a href="" target="_blank" class="slider-nav-item"><i class="fab fa-google-plus"></i></a>
+                                          <a href="" target="_blank" class="slider-nav-item"><i class="fab fa-twitter"></i></a>
+                                          <a href="" target="_blank" class="slider-nav-item"><i class="fab fa-instagram"></i></a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                            <nav>
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">THAI</button>
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">RAW</button>
+                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">ENG</button>
+                      </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                          <p></p>
+                        <div class="alert alert-info" role="alert">
+                          {{ post.title }} Episode 1 TH
+                        </div>
+                        <div class="alert alert-info" role="alert">
+                          {{ post.title }} Episode 2 TH
+                        </div>
+                    </div>
+                          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                               <p></p>
+                        <div class="alert alert-info" role="alert">
+                          {{ post.title }} Episode 1 Raw
+                        </div>
+                        <div class="alert alert-info" role="alert">
+                          {{ post.title }} Episode 2 Raw
+                        </div>
+                          </div>
+                          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                               <p></p>
+                        <div class="alert alert-info" role="alert">
+                          {{ post.title }} Episode 1 EN
+                        </div>
+                        <div class="alert alert-info" role="alert">
+                          {{ post.title }} Episode 2 EN
+                        </div>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+             </div>
+                 </div>
+         <div class="col-md-3">
+             <div class="card">
+                    <div class="card-body">
+                    </div>
+             </div>
+         </div>
+
+         </div>
+    </div>
+
+{% endblock %}

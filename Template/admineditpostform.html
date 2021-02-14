@@ -1,0 +1,62 @@
+{% extends 'layout.html'%}
+
+
+{% block content%}
+    <p></p>
+    <div class="container-fluid">
+         <div class="row">
+             <div class="col-md-2">
+                <div class="vh-100 card">
+                    <div class="card-body">
+                        <ul class="nav flex-column nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="{% url 'admin' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{% url 'adminpost' %}">Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Setting</a>
+                            </li>
+                            <li class="nav-item">
+                    <a class="nav-link" href="#">Members</a>
+                </li>
+                </ul>
+             </div>
+             </div>
+             </div>
+
+                    <div class="col-md-10">
+                        <div class="card vh-100">
+                            <div class="card-body">
+                                <p></p>
+                                <h3 class="border-bottom pb-2 mb-0"> Edit Post </h3>
+                            <p></p>
+                                <form class="form-horizontal" action="{% url 'admineditpost' post.pk %}" enctype="multipart/form-data" method="post">
+                                    {% csrf_token %}
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+                                    <input type="text" class="form-control" aria-label="title" aria-describedby="inputGroup-sizing-default" value="{{ post.title }}" name="title">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="file" class="form-control" id="inputGroupFile02" value="{{ post.image }}" name="image">
+                                    <a class="input-group-text" href="/media/{{ post.image }}">{{ post.image.name }}</a>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px" name="desc">{{ post.desc }}</textarea>
+                                    <label for="floatingTextarea2">Description</label>
+                                </div>
+                                    <p></p>
+                                    <p></p>
+                                    <input type="submit" value="Save" class="btn btn-primary"/>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+             </div>
+</div>
+
+
+{% endblock %}

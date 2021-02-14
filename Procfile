@@ -1,0 +1,1 @@
+web: gunicorn pierrotwebsite.wsgi --log-file -
