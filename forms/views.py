@@ -28,7 +28,7 @@ class AdminPost(ListView):
     template_name = 'adminpost.html'
     ordering = ['-pub_date']
     context_object_name = 'posts'
-    paginate_by = 8
+    paginate_by = 2
 
 def post(request, pk):
     return render(request, 'post.html', {'post': Post.objects.get(pk=pk)})
