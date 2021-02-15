@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿{% load static %}
+<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="utf-8">
@@ -11,6 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"/>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%  static  'css/style.css'  %}"/>
 
 </head>
 <body style="background-color: lightgray">
@@ -66,7 +70,7 @@
 
                     <form class="d-flex">
                         <input class="form-control px-1" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-warning" type="submit">Search</button>
+                        <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
                     </form>
 
                 </div>

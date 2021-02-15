@@ -1,30 +1,25 @@
 {% extends 'layout.html'%}
-
+{% load static %}
 
 {% block content%}
-    <div class="container-fluid">
-         <div class="row justify-content-left">
-             <div class="col-md-2">
-             <div class="vh-100 card">
-             <div class="card-body">
-                <ul class="nav flex-column nav-pills">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Post</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-                </ul>
-             </div>
-             </div>
-             </div>
-        </div>
-    </div>
+<div class="container error-container">
+	<div class="row  d-flex align-items-center justify-content-center">
+		<div class="col-md-12 text-center">
+			<h1 class="big-text">หยุดก่อน!</h1>
+			<h1 class="small-text">404 - ไม่พบสมองของคุณ</h1>
+
+		</div>
+		<div class="col-md-6  text-center">
+			<p> แนะนำให้ไปหาหมอเช็คสมองบ้างนะ และหัดอ่านหนังสือด้วยจะได้ไม่โง่เนอะ </p>
+
+			<a href="{%   url 'home' %} " class="button button-dark-blue iq-mt-15 text-center">กลับไปหน้าแรก</a>
+
+		</div>
+
+	</div>
+
+
+</div>
+
 
 {% endblock %}
