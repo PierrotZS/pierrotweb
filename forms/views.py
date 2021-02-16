@@ -4,6 +4,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.views.generic import DetailView, ListView, CreateView, DeleteView, UpdateView, TemplateView, View
 from django.contrib.admin.views.decorators import staff_member_required
+from django.http import Http404
 
 
 # Create your views here.
@@ -15,7 +16,8 @@ class HelloView(ListView):
     context_object_name = 'posts'
     paginate_by = 15
 
-
+def error(request):
+    return render(request, '404.html')
 
 
 @staff_member_required(login_url='login')
@@ -65,9 +67,6 @@ def admin_edit_post(request, pk):
     post.save()
     return redirect('adminpost')
 
-
-def page1(request):
-    return render(request, 'page1.html')
 
 
 def register(request):
