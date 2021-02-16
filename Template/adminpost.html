@@ -56,9 +56,9 @@
                                             <td style="width: 200px;">{{ post.pub_date }}</td>
                                             <td style="width: 200px;">
                                                 <a href="{% url 'admineditpostform' post.pk %}" class="btn btn-outline-primary" role="button" >EDIT</a>
-                                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">DELETE</button>
+                                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#Modal{{ post.pk }}">DELETE</button>
                                                 <form method="post">{% csrf_token %}
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="Modal{{ post.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
