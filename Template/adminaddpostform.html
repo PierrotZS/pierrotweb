@@ -1,7 +1,12 @@
 {% extends 'layout.html'%}
+{% load static %}
 
 
 {% block content%}
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{% static ' css/addpost.js' %}"></script>
+    <link rel="stylesheet" href="{% static "css/addpost.css" %}" type="text/css" />
+
     <p></p>
     <div class="container-fluid">
          <div class="row">
@@ -46,11 +51,47 @@
                                     <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px" name="desc"></textarea>
                                     <label for="floatingTextarea2">Description</label>
                                 </div>
-                                    <p></p>
-                                    <p></p>
+                                    <br>
+                                <nav>
+                                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">THAI</button>
+                                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">RAW</button>
+                                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">ENG</button>
+                                  </div>
+                                </nav>
+                                <div class="tab-content" id="nav-tabContent">
+                                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                                        <div class="container">
+    <div class="expandable form-group" data-count="1">
+        <div class="row">
+            <label class="col-md-1 offset-md-2" for="name[]">Name(s):</label>
+    	    <input name="name[]" type="text" id="name[]" value="name">
+		    <button class="btn add-more" id="add-more" type="button">+</button>
+	    </div>
+    </div>
+	    <br>
+    <div class="expandable form-group" data-count="1">
+        <div class="row">
+            <label class="col-md-1 offset-md-2" for="name[]">Surname:</label>
+            <input name="surname[]" type="text" id="surname[]" value="surname">
+		    <button class="btn add-more" id="add-more" type="button">+</button>
+	    </div>
+    </div>
+
+</div>
+
+                                    </div>
+                                      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                                      </div>
+                                      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+                                      </div>
+                                    </div>
                                     <input type="submit" value="Save" class="btn btn-primary"/>
-
-
+                                    </div>
+                                  </div>
                                 </form>
                             </div>
                         </div>

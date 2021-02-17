@@ -20,7 +20,6 @@
 
 .pagination>li>a { border-radius: 50% !important;margin: 0 5px;}
 
-
 .demo{padding:45px 0}
 .product-grid2{font-family:'Open Sans',sans-serif;position:relative}
 .product-grid2 .product-image2{overflow:hidden;position:relative}
@@ -52,4 +51,6 @@
 .product-grid2 .price{color:#303030;font-size:15px}
 @media screen and (max-width:990px){.product-grid2{margin-bottom:30px}
 }
+
+
 
