@@ -125,3 +125,6 @@ def loginsuccess(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def test(request):
+    return render(request, 'test.html')
