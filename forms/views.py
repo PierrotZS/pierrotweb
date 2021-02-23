@@ -35,6 +35,8 @@ class AdminPost(ListView):
 def post(request, pk):
     return render(request, 'post.html', {'post': Post.objects.get(pk=pk)})
 
+def watch(request, id):
+    return render(request, 'video.html', {'post': Post.objects.get(id=id)})
 
 @staff_member_required(login_url='login')
 def admin_delete_post(request, pk):

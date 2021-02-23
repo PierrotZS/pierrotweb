@@ -42,12 +42,11 @@
                     <div class="tab-content" id="nav-tabContent">
                       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                           <p></p>
+                          <a href="{% url 'watch' post.id %}">
                         <div class="alert alert-info" role="alert">
-                          {{ post.title }} Episode 1 TH
+                          {{ post.title }} ตอนที่ {{ post.episode }} TH
                         </div>
-                        <div class="alert alert-info" role="alert">
-                          {{ post.title }} Episode 2 TH
-                        </div>
+                          </a>
                     </div>
                           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                <p></p>

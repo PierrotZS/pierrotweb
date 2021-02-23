@@ -22,7 +22,8 @@ from pierrotwebsite import settings
 urlpatterns = [
     path('admindjango', admin.site.urls),
     path('', views.HelloView.as_view(), name='home'),
-    path('post/<int:pk>', views.post, name='post'),
+    path('anime/<int:pk>', views.post, name='post'),
+    path('watch/<int:id>', views.watch, name='watch'),
     path('register', views.register, name='register'),
     path('register_success', views.addUser),
     path('test', views.error, name='test'),
