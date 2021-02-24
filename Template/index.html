@@ -12,65 +12,65 @@
         </div>
              <div class="row">
                  <div class="col-md-9">
-                 <div class="card text-black bg-black mb-3">
-                 <div class="card-body">
-                <div class="container mt-40">
-                    <h3 class="h3"> Recently updated </h3>
-                    <div class="row">
-                        <div class="row row-cols-1 row-cols-md-4 g-sm-3">
-                            {% for post in posts %}
-                            <div class="product-grid2 g-3">
-                                <div class="product-image2" style="max-width: 255px; max-height: 340px;>
-                                    <a href="{% url 'post' post.pk %}">
-                                        <img class="pic-1" src="{% if not post.image %}https://i.ibb.co/XS34B5Q/logo-new.png{% else %}/media/{{ post.image }}{% endif %}" style="height: 320px; width: 210px;">
-                                        <img class="pic-2" src="{% if not post.image %}https://i.ibb.co/XS34B5Q/logo-new.png{% else %}/media/{{ post.image }}{% endif %}" style="height: 320px; width: 210px;">
-                                    </a>
-                                    <a class="add-to-cart" href="{% url 'post' post.pk %}">Watch Movie</a>
-                                </div>
-                                <div class="product-content">
-                                    <h6 class="title"><a href="{% url 'post' post.pk %}">{{ post.title }}</a></h6>
+                    <div class="card text-black bg-black">
+                        <div class="card-body">
+                            <div class="container">
+                                <h3 class="h3"> Recently updated </h3>
+                                    <div class="row">
+                                        <div class="row row-cols-1 row-cols-md-4 g-sm-2">
+                                            {% for post in posts %}
+                                            <div class="product-grid2 g-3">
+                                                <div class="product-image2" style="max-width: 255px; max-height: 340px;>
+                                                    <a href="{% url 'post' post.pk %}">
+                                                        <img class="pic-1" src="{% if not post.image %}https://i.ibb.co/XS34B5Q/logo-new.png{% else %}/media/{{ post.image }}{% endif %}" style="height: 320px; width: 210px;">
+                                                        <img class="pic-2" src="{% if not post.image %}https://i.ibb.co/XS34B5Q/logo-new.png{% else %}/media/{{ post.image }}{% endif %}" style="height: 320px; width: 210px;">
+                                                    </a>
+                                                    <a class="add-to-cart" href="{% url 'post' post.pk %}">Watch Movie</a>
+                                                </div>
+                                                <div class="product-content">
+                                                    <h6 class="title"><a href="{% url 'post' post.pk %}">{{ post.title }}</a></h6>
 
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                    <br>
+                                      <nav aria-label="Page navigation example">
+                                        {% if is_paginated %}
+                                        <ul class="pagination justify-content-center">
+                                            {% if page_obj.has_previous %}
+                                            <li class="page-item">
+                                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">«</a>
+                                            </li>
+                                            {% else %}
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">«</a>
+                                            </li>
+                                            {% endif %}
+                                            {% for i in paginator.page_range %}
+                                                {% if page_obj.number == i %}
+                                                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                                {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+                                                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% if page_obj.has_next %}
+                                            <li class="page-item">
+                                                <a class="page-link" href="?page={{ page_obj.next_page_number }}">»</a>
+                                            </li>
+                                            {% else %}
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">»</a>
+                                            </li>
+                                            {% endif %}
+                                        </ul>
+                                        {% endif %}
+                                     </nav>
+                                    </div>
                                 </div>
                             </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <br>
-                  <nav aria-label="Page navigation example">
-                    {% if is_paginated %}
-                    <ul class="pagination justify-content-center">
-                        {% if page_obj.has_previous %}
-                        <li class="page-item">
-                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">«</a>
-                        </li>
-                        {% else %}
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">«</a>
-                        </li>
-                        {% endif %}
-                        {% for i in paginator.page_range %}
-                            {% if page_obj.number == i %}
-                                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-                            {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
-                                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-                            {% endif %}
-                        {% endfor %}
-                        {% if page_obj.has_next %}
-                        <li class="page-item">
-                            <a class="page-link" href="?page={{ page_obj.next_page_number }}">»</a>
-                        </li>
-                        {% else %}
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">»</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                    {% endif %}
-                 </nav>
-                 </div>
-                 </div>
-                 </div>
                  <div class="col-md-3">
                     <div class="card card text-white bg-light mb-3">
                         <div class="card-body">
@@ -89,8 +89,7 @@
                                         </div>
                                     </div>
                                 </div>
-
-
+                            </div>
                         </div>
                     </div>
                  </div>

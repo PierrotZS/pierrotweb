@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿{% load static %}
+<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="utf-8">
@@ -16,11 +17,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-
+    <link rel="stylesheet" href="{% static "css/nav.css" %}" />
+    <link rel="stylesheet" href="{% static "css/foot.css" %}" />
 
 
 
@@ -84,16 +87,20 @@
         </nav>
     </header>
             {% block content %}
+
             {% endblock %}
 </body>
-{% if request.user.is_staff %}
-
-{% else %}
-    <footer class="bg-light text-center text-lg-start fixed-bottom py-1"> {# py-เลือกขนาดเอาเองเลย หรือจะเอาออกก็ได้ คามุยยยย #}
-    <div class="text-center p-2" style="background-color: whitesmoke;">
-        © 2021 Copyright:
-        <a class="text-dark" href="/">Powered By Pierrot ZS</a>
-    </div>
+<footer>
+        <div class="bottom section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="copyright">
+							<p>© <span>2021</span> Pierrot ZS All rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 </footer>
-{% endif %}
 </html>
