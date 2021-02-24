@@ -4,6 +4,7 @@
 
 {% block content%}
 <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link rel="stylesheet" href="{% static "css/search.css" %}" />
     <div class="container-lg">
     <br>
         <div class="alert alert-info" role="alert">
@@ -73,6 +74,23 @@
                  <div class="col-md-3">
                     <div class="card card text-white bg-light mb-3">
                         <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div id="custom-search-input">
+                                            <div class="input-group">
+                                                <input type="text" class="search-query form-control" placeholder="Search" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" disabled>
+                                                        <span class="fa fa-search"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                         </div>
                     </div>
                  </div>

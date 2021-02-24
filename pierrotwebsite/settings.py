@@ -17,9 +17,9 @@ BASE_DIR: Union[Path, Any] = Path(__file__).resolve().parent.parent
 SECRET_KEY = '_$qgno#o5mzffe!wnrkpon*mjphj%or0qa=l@^od-^*emz)8fd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://pieranime.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
