@@ -11,32 +11,32 @@ from django.http import Http404
 
 class HelloView(ListView):
     model = Post
-    template_name = 'index.html'
+    template_name = 'main/index.html'
     ordering = ['-pub_date']
     context_object_name = 'posts'
-    paginate_by = 15
+    paginate_by = 20
 
 def error(request):
-    return render(request, '404.html')
+    return render(request, 'eror/../Template/404.html')
 
 
 @staff_member_required(login_url='login')
 def admin(request):
-    return render(request, 'adminme.html')
+    return render(request, 'admin/adminme.html')
 
 
 class AdminPost(ListView):
     model = Post
-    template_name = 'adminpost.html'
+    template_name = 'admin/adminpost.html'
     ordering = ['-pub_date']
     context_object_name = 'posts'
     paginate_by = 8
 
 def post(request, pk):
-    return render(request, 'post.html', {'post': Post.objects.get(pk=pk)})
+    return render(request, 'main/post.html', {'post': Post.objects.get(pk=pk)})
 
 def watch(request, id):
-    return render(request, 'video.html', {'post': Post.objects.get(id=id)})
+    return render(request, 'main/video.html', {'post': Post.objects.get(id=id)})
 
 @staff_member_required(login_url='login')
 def admin_delete_post(request, pk):
@@ -45,7 +45,7 @@ def admin_delete_post(request, pk):
 
 
 class AdminAddPostForm(TemplateView):
-    template_name = 'adminaddpostform.html'
+    template_name = 'admin/adminaddpostform.html'
 
 
 @staff_member_required(login_url='login')
@@ -56,7 +56,7 @@ def admin_add_post(request):
 
 @staff_member_required(login_url='login')
 def admin_edit_post_form(request, pk):
-    return render(request, 'admineditpostform.html', {'post': Post.objects.get(pk=pk)})
+    return render(request, 'admin/admineditpostform.html', {'post': Post.objects.get(pk=pk)})
 
 
 @staff_member_required(login_url='login')
@@ -72,11 +72,11 @@ def admin_edit_post(request, pk):
 
 
 def register(request):
-    return render(request, 'register.html', )
+    return render(request, 'main/register.html', )
 
 
 def login(request):
-    return render(request, 'base.html', )
+    return render(request, 'main/base.html', )
 
 
 def addUser(request):
@@ -103,7 +103,7 @@ def addUser(request):
                 last_name=lastname,
             )
             user.save()
-        return render(request, 'result.html')
+        return render(request, 'main/result.html')
     else:
         messages.info(request, 'Password Not Correct')
         return redirect('/register')
@@ -129,4 +129,4 @@ def logout(request):
     return redirect('/')
 
 def test(request):
-    return render(request, 'test.html')
+    return render(request, 'main/test.html')

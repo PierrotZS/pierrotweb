@@ -1,44 +1,43 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+    .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
 
-.container{
-    padding: 10%;
-    text-align: center;
-}
-#custom-search-input {
-    margin:0;
-    margin-top: 10px;
-    padding: 0;
-}
- 
-#custom-search-input .search-query {
-    width:100%;
-    padding-right: 3px;
-    padding-left: 15px;
-        /* IE7-8 doesn't have border-radius, so don't indent the padding */
-    margin-bottom: 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 0;
-}
- 
-#custom-search-input button {
+    .search_input{
+    color: white;
     border: 0;
+    outline: 0;
     background: none;
-    /** belows styles are working good */
-    padding: 2px 5px;
-    margin-top: 2px;
-    position: absolute;
-    right:0;
-    /* IE7-8 doesn't have border-radius, so don't indent the padding */
-    margin-bottom: 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    color:#D9230F;
-    cursor: unset;
-    z-index: 2;
-}
- 
-.search-query:focus{
-    z-index: 0;   
-}
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
