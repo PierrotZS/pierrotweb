@@ -37,13 +37,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><img src="/media/icons/house.svg"> หน้าแรก</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fa fa-home"></i> หน้าแรก</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'test' %}"><img src="/media/icons/envelope.svg"> ติดต่อเรา</a>
+                            <a class="nav-link" href="{% url 'test' %}"><i class="fa fa-envelope"></i> ติดต่อเรา</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="/media/icons/view-list.svg">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-server"></i>
                                 หมวดหมู่
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -60,20 +60,20 @@
                     {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="/media/icons/emoji-smile.svg"> ยินดีต้อนรับ : {{user.username}}
+                                <i class="fa fa-user"></i> ยินดีต้อนรับ : {{user.username}}
                             </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#"><img src="/media/icons/person-circle.svg"> โปรไฟล์</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa fa-user-circle-o"></i> โปรไฟล์</a></li>
                             {% if request.user.is_staff %}
-                                <li><a class="dropdown-item" href="{% url 'admin' %}"><img src="/media/icons/cpu.svg"> ระบบแอดมิน</a></li>
+                                <li><a class="dropdown-item" href="{% url 'admin' %}"><i class="fa fa-podcast"></i> ระบบแอดมิน</a></li>
                                 {% endif %}
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{% url 'logout' %}"><img src="/media/icons/box-arrow-right.svg"> ออกจากระบบ</a></li>
+                                <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> ออกจากระบบ</a></li>
                             </ul>
                         </li>
 
                     {% else %}
-                        <li class="nav-item px-1"><a href="{% url 'login' %}" class="btn btn-outline-success" role="button" ><img src="/media/icons/box-arrow-in-right.svg"> เข้าสู่ระบบ</a></li>
+                        <li class="nav-item px-1"><a href="{% url 'login' %}" class="btn btn-outline-success" role="button" ><i class="fa fa-sign-in"></i> เข้าสู่ระบบ</a></li>
                     {% endif %}
                     </div>
 

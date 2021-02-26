@@ -16,10 +16,6 @@ class HelloView(ListView):
     context_object_name = 'posts'
     paginate_by = 20
 
-def error(request):
-    return render(request, 'eror/../Template/404.html')
-
-
 @staff_member_required(login_url='login')
 def admin(request):
     return render(request, 'admin/adminme.html')
@@ -129,4 +125,4 @@ def logout(request):
     return redirect('/')
 
 def test(request):
-    return render(request, 'main/test.html')
+    return render(request, 'error/404.html')

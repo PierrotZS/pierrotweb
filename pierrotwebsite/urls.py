@@ -26,7 +26,7 @@ urlpatterns = [
     path('watch/<int:id>', views.watch, name='watch'),
     path('register', views.register, name='register'),
     path('register_success', views.addUser),
-    path('test', views.error, name='test'),
+    path('test', views.test, name='test'),
     path('testadd', views.test, name='testadd'),
     path('login', views.login, name='login'),
     path('login_success', views.loginsuccess),
