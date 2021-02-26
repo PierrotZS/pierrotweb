@@ -1,4 +1,5 @@
 import django_heroku
+import dj_database_url
 import os
 from pathlib import Path
 
@@ -78,7 +79,7 @@ DATABASES = {
         'PORT' : ''
     }
 }
-
+DATABASES['default'] = dj_database_url.config(default='postgres://crxzagzydekjff:10fb3ff081ec0d3bd9d91e35cd062d6b73db31942c7b362973077a35c6d90a5b@ec2-54-146-73-98.compute-1.amazonaws.com:5432/d7fjj939sag221')
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
