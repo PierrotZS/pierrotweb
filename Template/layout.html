@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static "css/layout.css" %}" />
 
 
@@ -60,7 +61,7 @@
                     {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-user"></i> ยินดีต้อนรับ : {{user.username}}
+                                <i class="bi bi-person-lines-fill"></i> ยินดีต้อนรับ : {{user.username}}
                             </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#"><i class="fa fa-user-circle-o"></i> โปรไฟล์</a></li>
@@ -130,12 +131,12 @@
                         <div class="col-md-6">
                             <div class="contact-us">
                                 <div class="contact-icon">
-                                    <i class="fa fa-map-o" aria-hidden="true"></i>
+                                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
                                 </div>
                                 <!-- End contact Icon -->
                                 <div class="contact-info">
-                                    <h3>Jaipur India</h3>
-                                    <p>5353 Road Avenue</p>
+                                    <h3>Made By</h3>
+                                    <p>Pierrot ZS Developer</p>
                                 </div>
                                 <!-- End Contact Info -->
                             </div>
@@ -145,12 +146,12 @@
                         <div class="col-md-6">
                             <div class="contact-us contact-us-last">
                                 <div class="contact-icon">
-                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                    <i class="bi bi-rss-fill"></i>
                                 </div>
                                 <!-- End contact Icon -->
                                 <div class="contact-info">
-                                    <h3>95 711 9 5353</h3>
-                                    <p>Give us a call</p>
+                                    <h3>Totally Visit Site</h3>
+                                    <p>1000 Views</p>
                                 </div>
                                 <!-- End Contact Info -->
                             </div>
@@ -163,35 +164,35 @@
                         <div class="col-md-12 col-lg-6">
                             <div class="footer-widget footer-left-widget">
                                 <div class="section-heading">
-                                    <h3>Useful Links</h3>
+                                    <h3>Links</h3>
                                     <span class="animate-border border-black"></span>
                                 </div>
                                 <ul>
                                     <li>
-                                        <a href="#">About us</a>
+                                        <a href="#">Contact</a>
                                     </li>
                                     <li>
-                                        <a href="#">Services</a>
+                                        <a href="#">FAQ</a>
                                     </li>
                                     <li>
-                                        <a href="#">Projects</a>
+                                        <a href="#">Request</a>
                                     </li>
                                     <li>
-                                        <a href="#">Our Team</a>
+                                        <a href="#">Gene</a>
                                     </li>
                                 </ul>
                                 <ul>
                                     <li>
-                                        <a href="#">Contact us</a>
+                                        <a href="#">A-Z List</a>
                                     </li>
                                     <li>
-                                        <a href="#">Blog</a>
+                                        <a href="#">Upcoming</a>
                                     </li>
                                     <li>
-                                        <a href="#">Testimonials</a>
+                                        <a href="#">Most watched</a>
                                     </li>
                                     <li>
-                                        <a href="#">Faq</a>
+                                        <a href="#">Recently Updated</a>
                                     </li>
                                 </ul>
                             </div>
@@ -204,8 +205,7 @@
                                     <h3>Subscribe</h3>
                                     <span class="animate-border border-black"></span>
                                 </div>
-                                <p><!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
-                                Reference site about Lorem Ipsum, giving information on its origins, as well.</p>
+                                <p>Don't miss to subscribe to our new feeds, kindly fill the form below.</p>
                                 <form action="#">
                                     <div class="form-row">
                                         <div class="col dk-footer-form">
@@ -237,39 +237,14 @@
                     <div class="col-md-6">
                         <span>Copyright © 2021, All Right Reserved Pierrot ZS</span>
                     </div>
-                    <!-- End Col -->
-                    <div class="col-md-6">
-                        <div class="copyright-menu">
-                            <ul>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">Terms</a>
-                                </li>
-                                <li>
-                                    <a href="#">Privacy Policy</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- End col -->
                 </div>
-                <!-- End Row -->
             </div>
-            <!-- End Copyright Container -->
         </div>
-        <!-- End Copyright -->
-        <!-- Back to top -->
         <div id="back-to-top" class="back-to-top">
-            <button class="btn btn-dark" title="Back to Top" style="display: block;">
+            <a href="#"><button class="btn btn-dark" title="Back to Top" style="display: block;">
                 <i class="fa fa-angle-up"></i>
-            </button>
+            </button></a>
         </div>
-        <!-- End Back to top -->
 </footer>
 
 </html>
