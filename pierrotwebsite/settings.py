@@ -1,26 +1,29 @@
 import django_heroku
 import dj_database_url
 import os
+import cloudinary
 from pathlib import Path
+from django.urls import reverse_lazy
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from typing import Any, Union
 
 from django.conf.urls import static
 
-BASE_DIR: Union[Path, Any] = Path(__file__).resolve().parent.parent
+BASE_DIR: Union[Path, Any] = Path(__file__).resolve(strict=True).parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_$qgno#o5mzffe!wnrkpon*mjphj%or0qa=l@^od-^*emz)8fd'
+SECRET_KEY = config('SECRET_KEY', default="secret_def")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['https://pierrotweb.herokuapp.com/']
+ALLOWED_HOSTS = ['https://pierrotweb.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
@@ -33,7 +36,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'forms',
+    'cloudinary',
 ]
+cloudinary.config(
+    cloud_name=config('cloud_name', default="cloud"),
+    api_key=config('api_key', default="api_key"),
+    api_secret=config('api_secret', default="api_secret"),
+    secure=True,
+)
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -105,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Bangkok'
 
 USE_I18N = True
 
@@ -126,6 +137,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
