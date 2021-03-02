@@ -46,7 +46,7 @@ class AdminAddPostForm(TemplateView):
 
 @staff_member_required(login_url='login')
 def admin_add_post(request):
-    Post(title=request.POST.get('title'), desc=request.POST.get('desc'), image=request.FILES.get('image'), episode=request.POST.get('episode'), videolink=request.POST.get('videolink')).save()
+    Post(title=request.POST.get('title'), desc=request.POST.get('desc'),episode=request.POST.get('episode'), videolink=request.POST.get('videolink'), image=request.FILES.get('image')).save()
     return redirect('adminpost')
 
 
@@ -60,6 +60,8 @@ def admin_edit_post(request, pk):
     post = Post.objects.get(pk=pk)
     post.title = request.POST.get('title')
     post.desc = request.POST.get('desc')
+    post.episode = request.POST.get('episode')
+    post.videolink = request.POST.get('videolink')
     if request.FILES.get('image') is not None:
         post.image = request.FILES.get('image')
     post.save()
