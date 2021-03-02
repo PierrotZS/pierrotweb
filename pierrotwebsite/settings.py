@@ -1,10 +1,8 @@
 import django_heroku
 import dj_database_url
 import os
-import cloudinary
+import cloudinary.api
 from pathlib import Path
-from django.urls import reverse_lazy
-from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from typing import Any, Union
@@ -18,10 +16,10 @@ BASE_DIR: Union[Path, Any] = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY', default="secret_def")
+SECRET_KEY = "PierrotZS"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://pierrotweb.herokuapp.com/','127.0.0.1']
 
@@ -37,12 +35,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'forms',
     'cloudinary',
+    'ckeditor',
+    'taggit',
 ]
 cloudinary.config(
-    cloud_name=config('cloud_name', default="cloud"),
-    api_key=config('api_key', default="api_key"),
-    api_secret=config('api_secret', default="api_secret"),
-    secure=True,
+  cloud_name="dm0z6judi",
+  api_key="836225587554498",
+  api_secret="PR-WSEI_czMabXCHe4OAaAHWklI"
 )
 SITE_ID = 1
 
