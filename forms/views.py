@@ -46,7 +46,7 @@ class AdminAddPostForm(TemplateView):
 
 @staff_member_required(login_url='login')
 def admin_add_post(request):
-    Post(title=request.POST.get('title'), desc=request.POST.get('desc'), image=request.FILES.get('image')).save()
+    Post(title=request.POST.get('title'), desc=request.POST.get('desc'), image=request.FILES.get('image'), episode=request.POST.get('episode'), videolink=request.POST.get('videolink')).save()
     return redirect('adminpost')
 
 
