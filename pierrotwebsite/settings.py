@@ -4,6 +4,7 @@ import os
 import cloudinary.api
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from typing import Any, Union
 
@@ -19,7 +20,7 @@ BASE_DIR: Union[Path, Any] = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = "PierrotZS"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://pierrotweb.herokuapp.com/','127.0.0.1']
 
@@ -33,10 +34,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'forms',
+    'forms','models',
     'cloudinary',
     'ckeditor',
-    'taggit',
+    'taggit'
 ]
 cloudinary.config(
   cloud_name="dm0z6judi",
@@ -44,6 +45,7 @@ cloudinary.config(
   api_secret="PR-WSEI_czMabXCHe4OAaAHWklI"
 )
 SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

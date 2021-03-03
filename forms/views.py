@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Post
+from .models import Post,Catagory
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.views.generic import DetailView, ListView, CreateView, DeleteView, UpdateView, TemplateView, View
@@ -31,8 +31,17 @@ class AdminPost(ListView):
 def post(request, pk):
     return render(request, 'main/post.html', {'post': Post.objects.get(pk=pk)})
 
-def watch(request, id):
-    return render(request, 'main/video.html', {'post': Post.objects.get(id=id)})
+def watchth(request, id):
+    return render(request, 'main/videoth.html', {'post': Post.objects.get(id=id)})
+
+def watchraw(request, id):
+    return render(request, 'main/videoraw.html', {'post': Post.objects.get(id=id)})
+
+def watchen(request, id):
+    return render(request, 'main/videoen.html', {'post': Post.objects.get(id=id)})
+
+def watchtest(request):
+    return render(request ,'main/testvideo.php')
 
 @staff_member_required(login_url='login')
 def admin_delete_post(request, pk):
@@ -46,7 +55,15 @@ class AdminAddPostForm(TemplateView):
 
 @staff_member_required(login_url='login')
 def admin_add_post(request):
-    Post(title=request.POST.get('title'), desc=request.POST.get('desc'),episode=request.POST.get('episode'), videolink=request.POST.get('videolink'), image=request.FILES.get('image')).save()
+    Post(title=request.POST.get('title'),
+         desc=request.POST.get('desc'),
+         episodeth=request.POST.get('episodeth'),
+         videolinkth=request.POST.get('videolinkth'),
+         episoderaw=request.POST.get('episoderaw'),
+         videolinkraw=request.POST.get('videolinkraw'),
+         episodeen=request.POST.get('episodeen'),
+         videolinken=request.POST.get('videolinken'),
+         image=request.FILES.get('image')).save()
     return redirect('adminpost')
 
 
@@ -60,21 +77,33 @@ def admin_edit_post(request, pk):
     post = Post.objects.get(pk=pk)
     post.title = request.POST.get('title')
     post.desc = request.POST.get('desc')
-    post.episode = request.POST.get('episode')
-    post.videolink = request.POST.get('videolink')
+    post.episodeth = request.POST.get('episodeth')
+    post.videolinkth = request.POST.get('videolinkth')
+    post.episoderaw = request.POST.get('episoderaw')
+    post.videolinkraw = request.POST.get('videolinkraw')
+    post.episodeen = request.POST.get('episodeen')
+    post.videolinken = request.POST.get('videolinken')
     if request.FILES.get('image') is not None:
         post.image = request.FILES.get('image')
     post.save()
     return redirect('adminpost')
 
+class AdminCatagory(ListView):
+    model = Catagory
+    template_name = 'admin/admincatagorylist.html'
+    context_object_name = 'posts'
+    paginate_by = 8
 
+def admin_add_catagory(request):
+    catagory(tags=request.POST.get('tags')).save()
+    return redirect('admincatagory')
 
 def register(request):
     return render(request, 'main/register.html', )
 
 
 def login(request):
-    return render(request, 'main/base.html', )
+    return render(request, 'main/login.html', )
 
 
 def addUser(request):
@@ -87,10 +116,10 @@ def addUser(request):
 
     if password == repassword:
         if User.objects.filter(username=username).exists():
-            messages.info(request, 'UserName Already Use')
+            messages.info(request, 'ผู้ใช้นี้มีคนใช้แล้ว')
             return redirect('/register')
         elif User.objects.filter(email=email).exists():
-            messages.info(request, 'Email Already Use')
+            messages.info(request, 'อีเมลนี้ใช้งานแล้ว')
             return redirect('/register')
         else:
             user = User.objects.create_user(
@@ -118,7 +147,7 @@ def loginsuccess(request):
         auth.login(request, user)
         return redirect('/')
     else:
-        messages.info(request, 'No Data in System')
+        messages.info(request, 'ไม่พบผู้ใช้นี้หรือรหัสผ่านไม่ถูกต้อง')
         return redirect('/login')
 
 

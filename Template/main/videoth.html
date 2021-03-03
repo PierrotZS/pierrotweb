@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content%}
+    <p></p>
+    <div class="container-sm">
+         <div class="row">
+             <div class="col-md-9">
+                 <div class="card">
+                 <div class="card-body">
+                 <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'post' post.pk %}"> {{ post.title }} </a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Episode {{ post.episodeth }}</li>
+                    </ol>
+                    </nav>
+                      <iframe src="https://drive.google.com/file/d/{{ post.videolinkth }}/preview" width="100%" height="480"></iframe>
+                     <div itemscope itemtype="https://schema.org/VideoObject"><meta itemprop="uploadDate" content="Sat Feb 27 2021 01:24:10 GMT+0700 (เวลามาตรฐานโนโวซีบีสค์)"/><meta itemprop="name" content="Zard88giantmaidrobotvstentaclemonster20091127"/><meta itemprop="duration" content="PT1H13M43.88S" /><meta itemprop="thumbnailUrl" content="https://content.jwplatform.com/thumbs/Gkg0FMhU-640.jpg"/><meta itemprop="contentUrl" content="https://content.jwplatform.com/videos/Gkg0FMhU-EtAqwpru.mp4"/><div style="position:relative; overflow:hidden; padding-bottom:56.25%"> <iframe src="https://cdn.jwplayer.com/players/Gkg0FMhU-UrOl0BA4.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="Zard88giantmaidrobotvstentaclemonster20091127" style="position:absolute;" allowfullscreen></iframe> </div></div>
+                </div>
+             </div>
+                 </div>
+         <div class="col-md-3">
+             <div class="card">
+                    <div class="card-body">
+                    </div>
+             </div>
+         </div>
+
+         </div>
+    </div>
+
+{% endblock %}

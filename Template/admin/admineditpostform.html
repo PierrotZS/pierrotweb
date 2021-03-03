@@ -1,7 +1,11 @@
 {% extends 'layout.html' %}
-
+{% load static %}
 
 {% block content%}
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/addpost.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/addpost.css' %}" type="text/css" />
+
     <p></p>
     <div class="container-fluid">
          <div class="row">
@@ -77,10 +81,10 @@
                                                     <tbody>
                                                         <tr id='addr0' data-id="0" class="hidden">
                                                             <td data-name="episode" style="width: 150px;">
-                                                                <input type="text" name="episode"  placeholder='Episode' class="form-control">
+                                                                <input type="text" name="episodeth" value="{{ post.episodeth }}" placeholder='Episode' class="form-control">
                                                             </td>
                                                             <td data-name="link">
-                                                                <input type="text" name="videolink" placeholder='Link' class="form-control">
+                                                                <input type="text" name="videolinkth" value="{{ post.videolinkth }}" placeholder='Link' class="form-control">
                                                             </td>
                                                             <td data-name="del" style="width: 80px;">
                                                                 <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
@@ -115,10 +119,10 @@
                                                     <tbody>
                                                         <tr id='addr0' data-id="0" class="hidden">
                                                             <td data-name="episode" style="width: 150px;">
-                                                                <input type="text" name="episode"  placeholder='Episode' class="form-control">
+                                                                <input type="text" name="episoderaw" value="{{ post.episoderaw }}" placeholder='Episode' class="form-control">
                                                             </td>
                                                             <td data-name="link">
-                                                                <input type="text" name="videolink" placeholder='Link' class="form-control">
+                                                                <input type="text" name="videolinkraw" value="{{ post.videolinkraw }}" placeholder='Link' class="form-control">
                                                             </td>
                                                             <td data-name="del" style="width: 80px;">
                                                                 <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
@@ -154,10 +158,10 @@
                                                     <tbody>
                                                         <tr id='addr0' data-id="0" class="hidden">
                                                             <td data-name="episode" style="width: 150px;">
-                                                                <input type="text" name="episode"  placeholder='Episode' class="form-control">
+                                                                <input type="text" name="episodeen" value="{{ post.episodeen }}" placeholder='Episode' class="form-control">
                                                             </td>
                                                             <td data-name="link">
-                                                                <input type="text" name="videolink" placeholder='Link' class="form-control">
+                                                                <input type="text" name="videolinken" value="{{ post.videolinken }}" placeholder='Link' class="form-control">
                                                             </td>
                                                             <td data-name="del" style="width: 80px;">
                                                                 <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>

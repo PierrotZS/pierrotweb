@@ -31,33 +31,50 @@
                         <div class="card vh-100">
                             <div class="card-body">
                             <p></p>
-                            <h3 class="border-bottom pb-2 mb-0"><i class="fas fa-film"></i> Movie List </h3>
+                            <h3 class="border-bottom pb-2 mb-0"><i class="bi bi-bookmarks"></i> Catagory List </h3>
                             <p></p>
 
-                                <div align="right"><a href="{% url 'adminaddpostform' %}" class="btn btn-outline-dark btn-lg" role="button" ><i class="fas fa-file-text"></i> Add Movie</a></div>
+                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Catagory</button>
+                            <form method="post" action="{% url 'adminaddcatagory' %}">{% csrf_token %}
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Catagory</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div class="mb-3">
+                                          <label for="exampleFormControlInput1" class="form-label">Add Catagory</label>
+                                          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ex.action" name="tags">
+                                        </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a class="btn btn-outline-danger" href="{% url 'adminaddcatagory' %}">Save</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
 
                             <p></p>
                             <p></p>
                                 <table class="table">
                                       <thead>
                                         <tr class="table-info">
-                                          <th scope="col"> ID</th>
-                                          <th scope="col-md-6"><i class="fas fa-camera"></i> Title</th>
-                                            <th scope="col"><i class="fas fa-calendar"></i> Date</th>
+                                          <th scope="col-md-6"><i class="fas fa-camera"></i> Catagory</th>
                                           <th scope="col"><i class="fas fa-archive"></i> Action</th>
                                         </tr>
                                       </thead>
                                       <tbody>
-                                      {% for post in posts %}
+                                      {% for catagory in posts %}
                                         <tr>
-                                            <td cope="row" style="width: 60px;">{{ post.id }}</td>
-                                            <td>{{ post.title }}</td>
-                                            <td style="width: 200px;">{{ post.pub_date }}</td>
+                                            <td>{{ catagory.tags }}</td>
                                             <td style="width: 150px;">
-                                                <a href="{% url 'admineditpostform' post.pk %}" class="btn btn-outline-warning" role="button" ><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="btn btn-outline-warning" role="button" ><i class="fas fa-edit"></i></a>
                                                 <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#Modal{{ post.pk }}"><i class="fas fa-trash"></i></button>
                                                 <form method="post">{% csrf_token %}
-                                                    <div class="modal fade" id="Modal{{ post.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="Modal{{ catagory.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -65,11 +82,11 @@
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                             <div class="modal-body">
-                                                                <p>Do you sure to DELETE {{ post.title }} post?</p>
+                                                                <p>Do you sure to DELETE {{ catagory.tags }} catagory?</p>
                                                             </div>
                                                             <div class="modal-footer">
                                                                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                                                                <a class="btn btn-outline-danger" href="{% url 'admindeletepost' post.pk %}">Delete</a>
+                                                                <a class="btn btn-outline-danger" href="{% url 'admindeletepost' catagory.pk %}">Delete</a>
                                                             </div>
                                                             </div>
                                                         </div>

@@ -43,29 +43,27 @@
                     <div class="tab-content" id="nav-tabContent">
                       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                           <p></p>
-                          <a href="{% url 'watch' post.id %}">
-                        <div class="alert alert-info" role="alert">
-                          {{ post.title }} ตอนที่ {{ post.episode }} TH
+                          <a href="{% url 'watchth' post.id %}">
+                        <div class="alert alert-dark" role="alert">
+                          <i class="bi bi-camera-video-fill"></i> {{ post.title }} ตอนที่ {{ post.episodeth }} TH <i class="bi bi-badge-hd-fill"></i>
                         </div>
                           </a>
                     </div>
                           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                <p></p>
-                        <div class="alert alert-info" role="alert">
-                          {{ post.title }} Episode 1 Raw
+                          <a href="{% url 'watchraw' post.id %}">
+                        <div class="alert alert-success" role="alert">
+                          <i class="bi bi-camera-video-fill"></i> {{ post.title }} ตอนที่ {{ post.episoderaw }} RAW <i class="bi bi-badge-hd-fill"></i>
                         </div>
-                        <div class="alert alert-info" role="alert">
-                          {{ post.title }} Episode 2 Raw
-                        </div>
+                          </a>
                           </div>
                           <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                <p></p>
-                        <div class="alert alert-info" role="alert">
-                          {{ post.title }} Episode 1 EN
+                          <a href="{% url 'watchen' post.id %}">
+                        <div class="alert alert-warning" role="alert">
+                          <i class="bi bi-camera-video-fill"></i> {{ post.title }} ตอนที่ {{ post.episodeen }} EN <i class="bi bi-badge-hd-fill"></i>
                         </div>
-                        <div class="alert alert-info" role="alert">
-                          {{ post.title }} Episode 2 EN
-                        </div>
+                          </a>
                           </div>
                         </div>
                         </div>
@@ -74,7 +72,7 @@
                   </div>
                 </div>
              </div>
-                 </div>
+
          <div class="col-md-3">
              <div class="card">
                     <div class="card-body">
