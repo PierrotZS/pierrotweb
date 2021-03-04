@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/PierrotZS/pierrotweb.svg?branch=master)](https://travis-ci.com/PierrotZS/pierrotweb)
 
-#Website Link
+##Website Link
 - https://pierrotweb.herokuapp.com
 
 ## Team Members
@@ -14,7 +14,6 @@
 
 ## Quick start
 ## Requirements
-<<<<<<< HEAD
 * Language: Python 3.8 or more!
 * Back-end Framework: Django
     * Taggit 1.3.0
