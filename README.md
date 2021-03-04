@@ -78,10 +78,5 @@ Note!:
     ```$ deactivate```
     
 * To create super user
-=======
-
-- python 3.8 or more
-- django
->>>>>>> 98a61745fb507255b91639a3c8f50dc10a3b3e73
 
     ```$ python manage.py createsuperuser```
