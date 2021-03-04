@@ -1,6 +1,5 @@
 {% extends 'layout.html' %}
 {% load static %}
-{% load cloudinary %}
 
 
 {% block content%}
@@ -23,7 +22,7 @@
                     </div>
                     </div>
                     <div class="col-md-9">
-                      <div class="card-body">
+                    <div class="card-body">
                         <h3 class="card-title border-bottom pb-2 mb-0"> {{ post.title }} </h3>
                           <p class="card-text"><small class="text-muted">Last Update : {{ post.pub_date }}</small></p>
                         <p class="card-text">{{ post.desc }}</p>
@@ -33,46 +32,14 @@
 					<a href="" title="Twitter" target="_blank"><i class="fa fa-twitter fa-3x fa-fw"></i></a>
 					<a href="" title="Youtube" target="_blank"><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
 					<a href="#" title="Google+" target="_blank"><i class="fa fa-google-plus fa-3x fa-fw"></i></a>
-                            <nav>
-                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">THAI</button>
-                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">RAW</button>
-                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">ENG</button>
-                      </div>
-                    </nav>
-                    <div class="tab-content" id="nav-tabContent">
-                      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                          <p></p>
-                          <a href="{% url 'watchth' post.id %}">
-                        <div class="alert alert-dark" role="alert">
-                          <i class="bi bi-camera-video-fill"></i> {{ post.title }} ตอนที่ {{ post.episodeth }} TH <i class="bi bi-badge-hd-fill"></i>
-                        </div>
-                          </a>
+                        <p></p>
+                    <a href="{% url 'watchth' post.id %}"><div class="alert alert-dark" role="alert"><i class="bi bi-camera-video-fill"></i> {{ post.title }} ตอนที่ {{ post.episodeth }} TH <i class="bi bi-badge-hd-fill"></i></div></a>
                     </div>
-                          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                               <p></p>
-                          <a href="{% url 'watchraw' post.id %}">
-                        <div class="alert alert-success" role="alert">
-                          <i class="bi bi-camera-video-fill"></i> {{ post.title }} ตอนที่ {{ post.episoderaw }} RAW <i class="bi bi-badge-hd-fill"></i>
-                        </div>
-                          </a>
-                          </div>
-                          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                               <p></p>
-                          <a href="{% url 'watchen' post.id %}">
-                        <div class="alert alert-warning" role="alert">
-                          <i class="bi bi-camera-video-fill"></i> {{ post.title }} ตอนที่ {{ post.episodeen }} EN <i class="bi bi-badge-hd-fill"></i>
-                        </div>
-                          </a>
-                          </div>
-                        </div>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                </div>
              </div>
-
+            </div>
+         </div>
+             </div>
          <div class="col-md-3">
              <div class="card">
                     <div class="card-body">
