@@ -1,12 +1,12 @@
 {% extends 'layout.html' %}
 {% load static %}
 
-{% block content%}
-    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+{% block content %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
     <p></p>
     <div class="container-fluid">
-         <div class="row">
-             <div class="col-md-2">
+        <div class="row">
+            <div class="col-md-2">
                 <div class="vh-100 card">
                     <div class="card-body">
                         <ul class="nav flex-column nav-pills">
@@ -20,118 +20,141 @@
                                 <a class="nav-link" href="#">Setting</a>
                             </li>
                             <li class="nav-item">
-                    <a class="nav-link" href="#">Members</a>
-                </li>
-                </ul>
-             </div>
-             </div>
-             </div>
+                                <a class="nav-link" href="#">Members</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-                    <div class="col-md-10">
-                        <div class="card vh-100">
-                            <div class="card-body">
-                            <p></p>
-                            <h3 class="border-bottom pb-2 mb-0"><i class="bi bi-bookmarks"></i> Catagory List </h3>
-                            <p></p>
+            <div class="col-md-10">
+                <div class="card vh-100">
+                    <div class="card-body">
+                        <p></p>
+                        <h3 class="border-bottom pb-2 mb-0"><i class="bi bi-bookmarks"></i> Catagory List </h3>
+                        <p></p>
 
-                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Catagory</button>
-                            <form method="post" action="{% url 'adminaddcatagory' %}">{% csrf_token %}
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog">
+                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Add Catagory
+                        </button>
+                        <form method="post" action="{% url 'adminaddcatagory' %}">{% csrf_token %}
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog">
                                     <div class="modal-content">
-                                      <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Catagory</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                      </div>
-                                      <div class="modal-body">
-                                        <div class="mb-3">
-                                          <label for="exampleFormControlInput1" class="form-label">Add Catagory</label>
-                                          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ex.action" name="tags">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Catagory</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
                                         </div>
-                                      </div>
-                                      <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <a class="btn btn-outline-danger" href="{% url 'adminaddcatagory' %}">Save</a>
-                                      </div>
+                                        <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1" class="form-label">Add
+                                                    Catagory</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                       placeholder="ex.action" name="tags">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <a class="btn btn-outline-danger"
+                                               href="{% url 'adminaddcatagory' %}">Save</a>
+                                        </div>
                                     </div>
-                                  </div>
                                 </div>
+                            </div>
 
                             <p></p>
                             <p></p>
-                                <table class="table">
-                                      <thead>
-                                        <tr class="table-info">
-                                          <th scope="col-md-6"><i class="fas fa-camera"></i> Catagory</th>
-                                          <th scope="col"><i class="fas fa-archive"></i> Action</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                      {% for catagory in posts %}
-                                        <tr>
-                                            <td>{{ catagory.tags }}</td>
-                                            <td style="width: 150px;">
-                                                <a href="#" class="btn btn-outline-warning" role="button" ><i class="fas fa-edit"></i></a>
-                                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#Modal{{ post.pk }}"><i class="fas fa-trash"></i></button>
-                                                <form method="post">{% csrf_token %}
-                                                    <div class="modal fade" id="Modal{{ catagory.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
+                            <table class="table">
+                                <thead>
+                                <tr class="table-info">
+                                    <th scope="col-md-6"><i class="fas fa-camera"></i> Catagory</th>
+                                    <th scope="col"><i class="fas fa-archive"></i> Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for catagory in posts %}
+                                    <tr>
+                                        <td>{{ catagory.tags }}</td>
+                                        <td style="width: 150px;">
+                                            <a href="#" class="btn btn-outline-warning" role="button"><i
+                                                    class="fas fa-edit"></i></a>
+                                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                                    data-bs-target="#Modal{{ post.pk }}"><i class="fas fa-trash"></i>
+                                            </button>
+                                            <form method="post">{% csrf_token %}
+                                                <div class="modal fade" id="Modal{{ catagory.pk }}" tabindex="-1"
+                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    Alert</h5>
+                                                                <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                            </div>
                                                             <div class="modal-body">
-                                                                <p>Do you sure to DELETE {{ catagory.tags }} catagory?</p>
+                                                                <p>Do you sure to DELETE {{ catagory.tags }}
+                                                                    catagory?</p>
                                                             </div>
                                                             <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                                                                <a class="btn btn-outline-danger" href="{% url 'admindeletepost' catagory.pk %}">Delete</a>
-                                                            </div>
+                                                                <button type="button" class="btn btn-outline-secondary"
+                                                                        data-bs-dismiss="modal">Cancel
+                                                                </button>
+                                                                <a class="btn btn-outline-danger"
+                                                                   href="{% url 'admindeletepost' catagory.pk %}">Delete</a>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                      {% endfor %}
-                                      </tbody>
-                                </table>
-                             <nav aria-label="Page navigation example">
+                                                </div>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <nav aria-label="Page navigation example">
                                 {% if is_paginated %}
-                                <ul class="pagination justify-content-center">
-                                    {% if page_obj.has_previous %}
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">«</a>
-                                    </li>
-                                         {% else %}
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">«</a>
-                                    </li>
+                                    <ul class="pagination justify-content-center">
+                                        {% if page_obj.has_previous %}
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   href="?page={{ page_obj.previous_page_number }}">«</a>
+                                            </li>
+                                        {% else %}
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">«</a>
+                                            </li>
                                         {% endif %}
-                                      {% for i in paginator.page_range %}
-                                     {% if page_obj.number == i %}
-                                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-                                         {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
-                                         <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% if page_obj.has_next %}
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">»</a>
-                                    </li>
-                                    {% else %}
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">»</a>
-                                    </li>
-                                    {% endif %}
-                                </ul>
+                                        {% for i in paginator.page_range %}
+                                            {% if page_obj.number == i %}
+                                                <li class="page-item"><a class="page-link"
+                                                                         href="?page={{ i }}">{{ i }}</a></li>
+                                            {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+                                                <li class="page-item"><a class="page-link"
+                                                                         href="?page={{ i }}">{{ i }}</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if page_obj.has_next %}
+                                            <li class="page-item">
+                                                <a class="page-link" href="?page={{ page_obj.next_page_number }}">»</a>
+                                            </li>
+                                        {% else %}
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">»</a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
                                 {% endif %}
-                                </nav>
-                            </div>
-                        </div>
+                            </nav>
                     </div>
-             </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}

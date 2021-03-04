@@ -32,5 +32,6 @@ class Post(models.Model):
             return True
         return False
 
+
 class Catagory(models.Model):
     tags = TaggableManager(blank=True)

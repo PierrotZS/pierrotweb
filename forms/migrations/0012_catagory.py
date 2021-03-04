@@ -5,7 +5,6 @@ import taggit.managers
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('taggit', '0003_taggeditem_add_unique_index'),
         ('forms', '0011_auto_20210303_1958'),
@@ -16,7 +15,9 @@ class Migration(migrations.Migration):
             name='Catagory',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('tags', taggit.managers.TaggableManager(blank=True, help_text='A comma-separated list of tags.', through='taggit.TaggedItem', to='taggit.Tag', verbose_name='Tags')),
+                ('tags', taggit.managers.TaggableManager(blank=True, help_text='A comma-separated list of tags.',
+                                                         through='taggit.TaggedItem', to='taggit.Tag',
+                                                         verbose_name='Tags')),
             ],
         ),
     ]

@@ -7,7 +7,6 @@ import taggit.managers
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('taggit', '0003_taggeditem_add_unique_index'),
@@ -22,11 +21,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='post',
             name='author',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='anime', to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='anime',
+                                    to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
             model_name='post',
             name='tags',
-            field=taggit.managers.TaggableManager(blank=True, help_text='A comma-separated list of tags.', through='taggit.TaggedItem', to='taggit.Tag', verbose_name='Tags'),
+            field=taggit.managers.TaggableManager(blank=True, help_text='A comma-separated list of tags.',
+                                                  through='taggit.TaggedItem', to='taggit.Tag', verbose_name='Tags'),
         ),
     ]

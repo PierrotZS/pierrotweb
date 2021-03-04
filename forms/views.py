@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Post,Catagory
+from .models import Post, Catagory
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.views.generic import DetailView, ListView, CreateView, DeleteView, UpdateView, TemplateView, View
@@ -16,6 +16,7 @@ class HelloView(ListView):
     context_object_name = 'posts'
     paginate_by = 20
 
+
 @staff_member_required(login_url='login')
 def admin(request):
     return render(request, 'admin/adminme.html')
@@ -28,20 +29,26 @@ class AdminPost(ListView):
     context_object_name = 'posts'
     paginate_by = 8
 
+
 def post(request, pk):
     return render(request, 'main/post.html', {'post': Post.objects.get(pk=pk)})
+
 
 def watchth(request, id):
     return render(request, 'main/videoth.html', {'post': Post.objects.get(id=id)})
 
+
 def watchraw(request, id):
     return render(request, 'main/videoraw.html', {'post': Post.objects.get(id=id)})
+
 
 def watchen(request, id):
     return render(request, 'main/videoen.html', {'post': Post.objects.get(id=id)})
 
+
 def watchtest(request):
-    return render(request ,'main/testvideo.php')
+    return render(request, 'main/testvideo.php')
+
 
 @staff_member_required(login_url='login')
 def admin_delete_post(request, pk):
@@ -88,15 +95,18 @@ def admin_edit_post(request, pk):
     post.save()
     return redirect('adminpost')
 
+
 class AdminCatagory(ListView):
     model = Catagory
     template_name = 'admin/admincatagorylist.html'
     context_object_name = 'posts'
     paginate_by = 8
 
+
 def admin_add_catagory(request):
     catagory(tags=request.POST.get('tags')).save()
     return redirect('admincatagory')
+
 
 def register(request):
     return render(request, 'main/register.html', )
@@ -154,6 +164,7 @@ def loginsuccess(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
 
 def test(request):
     return render(request, 'error/404.html')
