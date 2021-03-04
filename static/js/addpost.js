@@ -1,10 +1,10 @@
-$(document).ready(function() {
-    $("#add_row").on("click", function() {
+$(document).ready(function () {
+    $("#add_row").on("click", function () {
         // Dynamic Rows Code
 
         // Get max row id and set new id
         var newid = 0;
-        $.each($("#tab_logic tr"), function() {
+        $.each($("#tab_logic tr"), function () {
             if (parseInt($(this).data("id")) > newid) {
                 newid = parseInt($(this).data("id"));
             }
@@ -12,12 +12,12 @@ $(document).ready(function() {
         newid++;
 
         var tr = $("<tr></tr>", {
-            id: "addr"+newid,
+            id: "addr" + newid,
             "data-id": newid
         });
 
         // loop through each td and create new elements with name of newid
-        $.each($("#tab_logic tbody tr:nth(0) td"), function() {
+        $.each($("#tab_logic tbody tr:nth(0) td"), function () {
             var td;
             var cur_td = $(this);
 
@@ -53,20 +53,18 @@ $(document).ready(function() {
         // add the new row
         $(tr).appendTo($('#tab_logic'));
 
-        $(tr).find("td button.row-remove").on("click", function() {
-             $(this).closest("tr").remove();
+        $(tr).find("td button.row-remove").on("click", function () {
+            $(this).closest("tr").remove();
         });
-});
-
-
+    });
 
 
     // Sortable Code
-    var fixHelperModified = function(e, tr) {
+    var fixHelperModified = function (e, tr) {
         var $originals = tr.children();
         var $helper = tr.clone();
 
-        $helper.children().each(function(index) {
+        $helper.children().each(function (index) {
             $(this).width($originals.eq(index).width())
         });
 
@@ -78,7 +76,6 @@ $(document).ready(function() {
     }).disableSelection();
 
     $(".table-sortable thead").disableSelection();
-
 
 
     $("#add_row").trigger("click");

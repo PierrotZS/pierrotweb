@@ -7,6 +7,7 @@ from ckeditor.fields import RichTextField
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
 
+
 class anime(models.Model):
     """Model for Blog."""
     title = models.CharField(max_length=50)
@@ -33,6 +34,7 @@ class anime(models.Model):
         if now >= self.pub_date:
             return True
         return False
+
 
 class AnimeReport(models.Model):
     """Model for report."""
