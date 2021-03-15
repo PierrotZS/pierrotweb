@@ -35,3 +35,12 @@ class Post(models.Model):
 
 class Catagory(models.Model):
     tags = TaggableManager(blank=True)
+
+class FriendList(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    tel = models.CharField(max_length=10)
+    social = models.CharField(max_length=200)
+    message = models.CharField(max_length=10000)
+    image = CloudinaryField('image', null=True)
+    pub_date = models.DateTimeField(auto_now=True)

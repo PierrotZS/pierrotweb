@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Post, Catagory
+from .models import Post, Catagory , FriendList
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.views.generic import DetailView, ListView, CreateView, DeleteView, UpdateView, TemplateView, View
@@ -12,6 +12,13 @@ from django.http import Http404
 class HelloView(ListView):
     model = Post
     template_name = 'main/index.html'
+    ordering = ['-pub_date']
+    context_object_name = 'posts'
+    paginate_by = 20
+
+class Friend(ListView):
+    model = FriendList
+    template_name = 'friend/friend.html'
     ordering = ['-pub_date']
     context_object_name = 'posts'
     paginate_by = 20
@@ -168,3 +175,19 @@ def logout(request):
 
 def test(request):
     return render(request, 'error/404.html')
+
+def AddFriend(request):
+    return render(request, 'friend/mainfriend.html')
+
+
+def addfriendform(request):
+    f = FriendList()
+    f.name = request.POST.get('name')
+    f.email = request.POST.get('email')
+    f.tel = request.POST.get('tel')
+    f.social = request.POST.get('social')
+    f.message = request.POST.get('message')
+    f.image = request.FILES.get('image')
+    f.save()
+    return redirect('freindship')
+
