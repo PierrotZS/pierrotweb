@@ -42,7 +42,7 @@ class FriendList(models.Model):
     tel = models.CharField(max_length=10)
     social = models.CharField(max_length=200)
     message = models.CharField(max_length=10000)
-    picture = CloudinaryField('picture',null=True)
+    picture = CloudinaryField('picture', null=True)
     pub_date = models.DateTimeField(auto_now=True)
 
     class Meta:
@@ -58,3 +58,23 @@ class FriendList(models.Model):
         return False
 
     
+class Friendzone(models.Model):
+    nick = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    tel = models.CharField(max_length=10)
+    social = models.CharField(max_length=200)
+    message = models.CharField(max_length=10000)
+    picture = CloudinaryField('picture', null=True)
+    pub_date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "friendzone"
+
+    def __str__(self):
+        return self.nick
+
+    def is_published(self):
+        now = timezone.now()
+        if now >= self.pub_date:
+            return True
+        return False

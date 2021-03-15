@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Post, Catagory , FriendList
+from .models import Post, Catagory , FriendList, Friendzone
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.views.generic import DetailView, ListView, CreateView, DeleteView, UpdateView, TemplateView, View
@@ -17,7 +17,7 @@ class HelloView(ListView):
     paginate_by = 20
 
 class Friend(ListView):
-    model = FriendList
+    model = Friendzone
     template_name = 'friend/friend.html'
     ordering = ['-pub_date']
     context_object_name = 'posts'
@@ -181,11 +181,13 @@ def AddFriend(request):
 
 
 def addfriendform(request):
-    FriendList( name=request.POST.get('name'),
+    Friendzone( nick=request.POST.get('nick'),
                 email=request.POST.get('email'),
                 tel=request.POST.get('tel'),
                 social=request.POST.get('social'),
                 message=request.POST.get('message'),
                 picture=request.FILES.get('picture')).save()
-    return redirect('freindship')
+    return redirect('addfriendshipsuccess')
 
+def fsuccess(request):
+    return render(request, 'friend/success.html', )

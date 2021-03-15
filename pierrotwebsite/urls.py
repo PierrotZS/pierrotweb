@@ -31,6 +31,7 @@ urlpatterns = [
                   path('friendship', views.Friend.as_view(), name='freindship'),
                   path('addfriendship', views.AddFriend, name='addfreindship'),
                   path('addfriendshipform', views.addfriendform, name='addfriendshipform'),
+                  path('addfriendshipsuccess', views.fsuccess, name='addfriendshipsuccess'),
                   path('register_success', views.addUser),
                   path('test', views.test, name='test'),
                   path('testadd', views.test, name='testadd'),
