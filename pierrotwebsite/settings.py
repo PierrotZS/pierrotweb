@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'forms', 'models',
     'cloudinary',
+    'versatileimagefield',
     'ckeditor',
     'taggit'
 ]

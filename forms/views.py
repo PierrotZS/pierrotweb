@@ -181,11 +181,11 @@ def AddFriend(request):
 
 
 def addfriendform(request):
-    FriendList(name=request.POST.get('name'),
-            email=request.POST.get('email'),
-            tel=request.POST.get('tel'),
-            social=request.POST.get('social'),
-            message=request.POST.get('message'),
-            image=request.FILES.get('image')).save()
+    FriendList( name=request.POST.get('name'),
+                email=request.POST.get('email'),
+                tel=request.POST.get('tel'),
+                social=request.POST.get('social'),
+                message=request.POST.get('message'),
+                picture=request.FILES.get('picture')).save()
     return redirect('freindship')
 

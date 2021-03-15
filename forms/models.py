@@ -42,7 +42,7 @@ class FriendList(models.Model):
     tel = models.CharField(max_length=10)
     social = models.CharField(max_length=200)
     message = models.CharField(max_length=10000)
-    image = CloudinaryField('image',null=True)
+    picture = CloudinaryField('picture',null=True)
     pub_date = models.DateTimeField(auto_now=True)
 
     class Meta:
