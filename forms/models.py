@@ -42,5 +42,19 @@ class FriendList(models.Model):
     tel = models.CharField(max_length=10)
     social = models.CharField(max_length=200)
     message = models.CharField(max_length=10000)
-    image = CloudinaryField('image', null=True)
+    image = CloudinaryField('image',null=True)
     pub_date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "friend"
+
+    def __str__(self):
+        return self.name
+
+    def is_published(self):
+        now = timezone.now()
+        if now >= self.pub_date:
+            return True
+        return False
+
+    
