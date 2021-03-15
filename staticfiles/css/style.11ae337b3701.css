@@ -1,0 +1,436 @@
+.social-section {
+    padding: 5px;
+    -webkit-box-shadow: 0px -1px 10px #000;
+    -moz-box-shadow: 0px -1px 10px #000;
+    -o-box-shadow: 0px -1px 10px #000;
+    box-shadow: 0px -1px 10px #000;
+}
+
+.social-section h3 {
+    font-weight: bold;
+    color: #333
+}
+
+.social-section h6 {
+    color: #6d6d6d;
+    margin-left: 35px;
+}
+
+.social-section i {
+    color: #6d6d6d;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+.social-section .fa-facebook:hover {
+    color: #3b5998
+}
+
+.social-section .fa-instagram:hover {
+    color: #833ab4
+}
+
+.social-section .fa-twitter:hover {
+    color: #1da1f2
+}
+
+.social-section .fa-youtube-play:hover {
+    color: #ff0000
+}
+
+.social-section .fa-twitch:hover {
+    color: #6441a5;
+}
+
+.social-section .fa-google-plus:hover {
+    color: #dd4b39
+}
+
+.social-section .fa-pinterest:hover {
+    color: #bd081c
+}
+
+.social-section .fa-tumblr:hover {
+    color: #35465c;
+}
+
+
+.pagination > li > a {
+    border-radius: 50% !important;
+    margin: 0 5px;
+}
+
+.demo {
+    padding: 45px 0
+}
+
+.product-grid2 {
+    font-family: 'Open Sans', sans-serif;
+    position: relative
+}
+
+.product-grid2 .product-image2 {
+    overflow: hidden;
+    position: relative
+}
+
+.product-grid2 .product-image2 a {
+    display: block
+}
+
+.product-grid2 .product-image2 img {
+    width: 100%;
+    height: auto
+}
+
+.product-image2 .pic-1 {
+    opacity: 1;
+    transition: all .5s
+}
+
+.product-grid2:hover .product-image2 .pic-1 {
+    opacity: 0
+}
+
+.product-image2 .pic-2 {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .5s
+}
+
+.product-grid2:hover .product-image2 .pic-2 {
+    opacity: 1
+}
+
+.product-grid2 .social {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 50px;
+    right: 25px;
+    z-index: 1
+}
+
+.product-grid2 .social li {
+    margin: 0 0 10px;
+    display: block;
+    transform: translateX(100px);
+    transition: all .5s
+}
+
+.product-grid2:hover .social li {
+    transform: translateX(0)
+}
+
+.product-grid2:hover .social li:nth-child(2) {
+    transition-delay: .15s
+}
+
+.product-grid2:hover .social li:nth-child(3) {
+    transition-delay: .25s
+}
+
+.product-grid2 .social li a {
+    color: #505050;
+    background-color: #fff;
+    font-size: 17px;
+    line-height: 45px;
+    text-align: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    display: block;
+    transition: all .3s ease 0s
+}
+
+.product-grid2 .social li a:hover {
+    color: #fff;
+    background-color: #3498db;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5)
+}
+
+.product-grid2 .social li a:after, .product-grid2 .social li a:before {
+    content: attr(data-tip);
+    color: #fff;
+    background-color: #000;
+    font-size: 12px;
+    line-height: 22px;
+    border-radius: 3px;
+    padding: 0 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -30px
+}
+
+.product-grid2 .social li a:after {
+    content: '';
+    height: 15px;
+    width: 15px;
+    border-radius: 0;
+    transform: translateX(-50%) rotate(45deg);
+    top: -22px;
+    z-index: -1
+}
+
+.product-grid2 .social li a:hover:after, .product-grid2 .social li a:hover:before {
+    opacity: 1
+}
+
+.product-grid2 .add-to-cart {
+    color: #fff;
+    background-color: #404040;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    transition: all .3s
+}
+
+.product-grid2 .add-to-cart:hover {
+    background-color: #3498db;
+    text-decoration: none
+}
+
+.product-grid2:hover .add-to-cart {
+    bottom: 0
+}
+
+.product-grid2 .product-new-label {
+    background-color: #3498db;
+    color: #fff;
+    font-size: 17px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .3s
+}
+
+.product-grid2:hover .product-new-label {
+    opacity: 0
+}
+
+.product-grid2 .product-content {
+    padding: 20px 10px;
+    text-align: center
+}
+
+.product-grid2 .title {
+    font-size: 17px;
+    margin: 0 0 7px
+}
+
+.product-grid2 .title a {
+    color: #303030
+}
+
+.product-grid2 .title a:hover {
+    color: #3498db
+}
+
+.product-grid2 .price {
+    color: #303030;
+    font-size: 15px
+}
+
+@media screen and (max-width: 990px) {
+    .product-grid2 {
+        margin-bottom: 30px
+    }
+}
+
+
+#custom-search-input {
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    width: 100%;
+    padding-right: 3px;
+    padding-left: 15px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 0;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: absolute;
+    right: 0;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #D9230F;
+    cursor: unset;
+    z-index: 2;
+}
+
+.search-query:focus {
+    z-index: 0;
+}
+
+
+.btn-purple-moon {
+    background: #4e54c8; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-ultra-voilet {
+    background: #654ea3; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eaafc8, #654ea3); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eaafc8, #654ea3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-pink-moon {
+    background: #ec008c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fc6767, #ec008c); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fc6767, #ec008c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-cool-blues {
+    background: #2193b0; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-dark-blue {
+    background: #7474BF; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #348AC7, #7474BF); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-green-moon {
+    background: #56ab2f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-orange-moon {
+    background: #fc4a1a; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-dark-moon {
+    background: #141E30; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-light-moon {
+    background: #FFEFBA; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #000;
+    border: 3px solid #eee;
+}
+
+.btn-funky-moon {
+    background: #A770EF; /* fallback for old browsers */
+    background: -webkit-linear-gradient(145deg, #FDB99B, #CF8BF3, #A770EF); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(145deg, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+
+.btn-rounded {
+    border-radius: 35px;
+}
+
+.btn-fab {
+    height: 50px;
+    width: 53px;
+    border-radius: 50%;
+}
+
+
+#MiCarousel {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 10px 10px 38px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 38px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 38px -13px rgba(0, 0, 0, 0.75);
+}
+
+.carousel-img {
+    background-color: #000;
+    color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    -webkit-clip-path: polygon(0 0, 96% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+    opacity: 0.8;
+}
+
+.div-r {
+    padding: 40px;
+}
+
+.carousel-title {
+    font-size: 80px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.carousel-pagination {
+    background-color: #000 !important;
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 100%;
+    position: relative;
+    bottom: -50px;
+    opacity: 0.5;
+}
+
+.carousel-pagination.active {
+    opacity: 1;
+}
+
+.carousel-controls {
+    display: none;
+}
+
