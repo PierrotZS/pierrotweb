@@ -65,6 +65,7 @@ class Friendzone(models.Model):
     social = models.CharField(max_length=200)
     message = models.CharField(max_length=10000)
     picture = CloudinaryField('picture', null=True)
+    message2 = models.CharField(max_length=10000, null=True)
     pub_date = models.DateTimeField(auto_now=True)
 
     class Meta:
